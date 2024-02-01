@@ -5,6 +5,7 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
 const propertiesRoutes = require("./routes/properties")
+const savedPropertiesRoutes = require("./routes/savedProperties")
 
 
 
@@ -12,6 +13,7 @@ const propertiesRoutes = require("./routes/properties")
 applyMiddlware(app)
 
 app.use(propertiesRoutes)
+app.use(savedPropertiesRoutes)
 
 
 
