@@ -4,11 +4,14 @@ const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
+const propertiesRoutes = require("./routes/properties")
 
 
 
 // It's export into middlware folder for use middlware 
 applyMiddlware(app)
+
+app.use(propertiesRoutes)
 
 
 
