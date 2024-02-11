@@ -41,12 +41,12 @@ async function run() {
         const ownerCollection = client.db("RentifyDB").collection("ownerRequest");
 
 
-        // properties data post api creat by Sojib
-        app.post("/properties", async (req, res) => {
-            const newProperties = req.body;
-            const result = await PropertyCollection.insertOne(newProperties)
-            res.send(result)
-        })
+        // properties data post api creat by Sojib [done]
+        // app.post("/properties", async (req, res) => {
+        //     const newProperties = req.body;
+        //     const result = await PropertyCollection.insertOne(newProperties)
+        //     res.send(result)
+        // })
 
         // properties data get api creat by Sojib [done]
         // app.get("/properties", async (req, res) => {
