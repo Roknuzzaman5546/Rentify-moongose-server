@@ -68,13 +68,13 @@ async function run() {
             res.send(result);
         });
 
-        // This API will call all the requested user properties by email address, including rental and sale properties. [by- Tanbir]
-        app.get("/all_requested", async (req, res) => {
-            const email = req.query.email;
-            const query = { requesterEmail: email };
-            const result = await Requested_PropertiesCollection.find(query).toArray();
-            res.send(result);
-        });
+        // This API will call all the requested user properties by email address, including rental and sale properties. [by- Tanbir] [done]
+        // app.get("/all_requested", async (req, res) => {
+        //     const email = req.query.email;
+        //     const query = { requesterEmail: email };
+        //     const result = await Requested_PropertiesCollection.find(query).toArray();
+        //     res.send(result);
+        // });
 
         // This API calls all the requested properties (For Sale) of an user by the user's email address. [by- Tanbir]
         app.get("/requested-sale", async (req, res) => {
@@ -110,39 +110,40 @@ async function run() {
             }
         });
 
+        // [done]
         //This API calls the rent & sale request of an owner by konika
+        // [done]
+        // app.get("/ownerRentReq", async (req, res) => {
+        //     const email = req.query.email;
+        //     const query = { "property.owner_details.owner_email": email };
+        //     const ownerProperties = await Requested_PropertiesCollection.find(
+        //         query
+        //     ).toArray();
+        //     if (ownerProperties) {
+        //         const result = ownerProperties.filter(
+        //             (item) => item?.property?.property_for == "rent"
+        //         );
+        //         res.send(result);
+        //     } else {
+        //         return res.status(401).send({ message: "unauthorized access" });
+        //     }
+        // });
 
-        app.get("/ownerRentReq", async (req, res) => {
-            const email = req.query.email;
-            const query = { "property.owner_details.owner_email": email };
-            const ownerProperties = await Requested_PropertiesCollection.find(
-                query
-            ).toArray();
-            if (ownerProperties) {
-                const result = ownerProperties.filter(
-                    (item) => item?.property?.property_for == "rent"
-                );
-                res.send(result);
-            } else {
-                return res.status(401).send({ message: "unauthorized access" });
-            }
-        });
-
-        app.get("/ownerSaleReq", async (req, res) => {
-            const email = req.query.email;
-            const query = { "property.owner_details.owner_email": email };
-            const ownerSaleProperties = await Requested_PropertiesCollection.find(
-                query
-            ).toArray();
-            if (ownerSaleProperties) {
-                const result = ownerSaleProperties.filter(
-                    (item) => item?.property?.property_for == "sale"
-                );
-                res.send(result);
-            } else {
-                return res.status(401).send({ message: "unauthorized access" });
-            }
-        });
+        // app.get("/ownerSaleReq", async (req, res) => {
+        //     const email = req.query.email;
+        //     const query = { "property.owner_details.owner_email": email };
+        //     const ownerSaleProperties = await Requested_PropertiesCollection.find(
+        //         query
+        //     ).toArray();
+        //     if (ownerSaleProperties) {
+        //         const result = ownerSaleProperties.filter(
+        //             (item) => item?.property?.property_for == "sale"
+        //         );
+        //         res.send(result);
+        //     } else {
+        //         return res.status(401).send({ message: "unauthorized access" });
+        //     }
+        // });
 
         app.put("/accept/:id", async (req, res) => {
             const id = req.params.id;
@@ -206,14 +207,15 @@ async function run() {
             }
         });
 
-        // property data request post by Sojib
-        app.post("/requested-properties", async (req, res) => {
-            const propertyRequest = req.body;
-            const result = await Requested_PropertiesCollection.insertOne(
-                propertyRequest
-            );
-            res.send(result);
-        });
+        // property data request post by Sojib [done]
+        
+        // app.post("/requested-properties", async (req, res) => {
+        //     const propertyRequest = req.body;
+        //     const result = await Requested_PropertiesCollection.insertOne(
+        //         propertyRequest
+        //     );
+        //     res.send(result);
+        // });
 
         // Request property data individually get by Sojib
         app.get("/requested-properties", async (req, res) => {

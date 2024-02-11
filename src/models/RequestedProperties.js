@@ -125,8 +125,7 @@ const Requested_PropertiesSchema = new Schema({
         type: String,
         required: true
     },
-    requesterName
-        : {
+    requesterName: {
         type: String,
         required: true
     },
@@ -134,8 +133,7 @@ const Requested_PropertiesSchema = new Schema({
         type: Number,
         required: true
     },
-    requesterEmail
-        : {
+    requesterEmail: {
         type: String,
         required: true
     },

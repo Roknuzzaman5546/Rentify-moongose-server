@@ -7,6 +7,7 @@ const port = process.env.PORT || 5000;
 
 const propertiesRoutes = require("./routes/properties")
 const savedPropertiesRoutes = require("./routes/savedProperties")
+const requestedProperties = require("./routes/requestedProperties")
 
 
 // It's export into middlware folder for use middlware 
@@ -14,6 +15,7 @@ applyMiddlware(app)
 
 app.use(propertiesRoutes)
 app.use(savedPropertiesRoutes)
+app.use(requestedProperties)
 
 
 
