@@ -4,9 +4,9 @@ const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
+
 const propertiesRoutes = require("./routes/properties")
 const savedPropertiesRoutes = require("./routes/savedProperties")
-
 
 
 // It's export into middlware folder for use middlware 
@@ -27,6 +27,7 @@ app.all("*", (req, res, next) => {
     error.status = 404;
     next(error);
 });
+
 // respose this api in this error by next
 app.use((err, req, res, next) => {
     res.status(err.status || 500).json({

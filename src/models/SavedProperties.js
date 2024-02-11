@@ -16,19 +16,7 @@ const SavedPropertiesSchema = new Schema({
                     type: String,
                     required: true
                 },
-                owner_phone: {
-                    type: Number,
-                    require: true
-                },
                 owner_email: {
-                    type: String,
-                    required: true
-                },
-                owner_profession: {
-                    type: String,
-                    required: true
-                },
-                owner_address: {
                     type: String,
                     required: true
                 }
@@ -46,6 +34,10 @@ const SavedPropertiesSchema = new Schema({
                 require: true
             },
             property_img: {
+                type: String,
+                require: true
+            },
+            property_title: {
                 type: String,
                 require: true
             },

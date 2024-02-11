@@ -1,10 +1,7 @@
-const Properties = require('../../models/Properties');
+// this is api rout for properties authectication
+const propertiesFindAll = require('../../api/properties/properties');
 const router = require('express').Router();
 
-
-router.get("/properties", async (req, res) => {
-    const result = await Properties.find();
-    res.send(result);
-});
+router.get("/properties", propertiesFindAll);
 
 module.exports = router
