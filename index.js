@@ -76,39 +76,39 @@ async function run() {
         //     res.send(result);
         // });
 
-        // This API calls all the requested properties (For Sale) of an user by the user's email address. [by- Tanbir]
-        app.get("/requested-sale", async (req, res) => {
-            const email = req.query.email;
-            const query = { requesterEmail: email };
-            const Requested_Properties = await Requested_PropertiesCollection.find(
-                query
-            ).toArray();
-            if (Requested_Properties) {
-                const result = Requested_Properties.filter(
-                    (item) => item?.property?.property_for == "sale"
-                );
-                res.send(result);
-            } else {
-                return res.status(401).send({ message: "unauthorized access" });
-            }
-        });
+        // This API calls all the requested properties (For Sale) of an user by the user's email address. [by- Tanbir][done]
+        // app.get("/requested-sale", async (req, res) => {
+        //     const email = req.query.email;
+        //     const query = { requesterEmail: email };
+        //     const Requested_Properties = await Requested_PropertiesCollection.find(
+        //         query
+        //     ).toArray();
+        //     if (Requested_Properties) {
+        //         const result = Requested_Properties.filter(
+        //             (item) => item?.property?.property_for == "sale"
+        //         );
+        //         res.send(result);
+        //     } else {
+        //         return res.status(401).send({ message: "unauthorized access" });
+        //     }
+        // });
 
-        // This API calls all the requested properties (For Rent) of an user by the user's email address. [by- Tanbir]
-        app.get("/requested-rent", async (req, res) => {
-            const email = req.query.email;
-            const query = { requesterEmail: email };
-            const Requested_Properties = await Requested_PropertiesCollection.find(
-                query
-            ).toArray();
-            if (Requested_Properties) {
-                const result = Requested_Properties.filter(
-                    (item) => item?.property?.property_for == "rent"
-                );
-                res.send(result);
-            } else {
-                return res.status(401).send({ message: "unauthorized access" });
-            }
-        });
+        // This API calls all the requested properties (For Rent) of an user by the user's email address. [by- Tanbir][done]
+        // app.get("/requested-rent", async (req, res) => {
+        //     const email = req.query.email;
+        //     const query = { requesterEmail: email };
+        //     const Requested_Properties = await Requested_PropertiesCollection.find(
+        //         query
+        //     ).toArray();
+        //     if (Requested_Properties) {
+        //         const result = Requested_Properties.filter(
+        //             (item) => item?.property?.property_for == "rent"
+        //         );
+        //         res.send(result);
+        //     } else {
+        //         return res.status(401).send({ message: "unauthorized access" });
+        //     }
+        // });
 
         // [done]
         //This API calls the rent & sale request of an owner by konika
