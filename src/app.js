@@ -11,6 +11,8 @@ const requestedProperties = require("./routes/requestedProperties")
 const usersRoutes = require("./routes/users")
 const paymentRoutes = require("./routes/payments")
 const blogsRountes = require("./routes/blogs")
+const commentsRoutes = require("./routes/comments")
+const reviewsRoutes = require("./routes/reviews")
 
 // It's export into middlware folder for use middlware 
 applyMiddlware(app)
@@ -21,6 +23,8 @@ app.use(requestedProperties)
 app.use(usersRoutes)
 app.use(paymentRoutes)
 app.use(blogsRountes)
+app.use(commentsRoutes)
+app.use(reviewsRoutes)
 
 
 app.get("/health", (req, res) => {

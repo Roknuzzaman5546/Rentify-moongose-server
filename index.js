@@ -287,18 +287,18 @@ async function run() {
 
         //reviews
 
-        //posting
-        app.post("/reviews", async (req, res) => {
-            const review = req.body;
-            const result = await reviewCollection.insertOne(review);
-            res.send(result);
-        });
+        //posting [done]
+        // app.post("/reviews", async (req, res) => {
+        //     const review = req.body;
+        //     const result = await reviewCollection.insertOne(review);
+        //     res.send(result);
+        // });
 
-        //getting
-        app.get("/reviews", async (req, res) => {
-            const result = await reviewCollection.find().toArray();
-            res.send(result);
-        });
+        //getting [done]
+        // app.get("/reviews", async (req, res) => {
+        //     const result = await reviewCollection.find().toArray();
+        //     res.send(result);
+        // });
 
         //review delete
         app.delete("/reviews/:id", async (req, res) => {
@@ -373,17 +373,18 @@ async function run() {
         //     res.send(result);
         // });
 
-        // blogs comment creat & codded by sojib
-        app.post("/comments", async (req, res) => {
-            const newComment = req.body;
-            const result = await blogsCommentCollection.insertOne(newComment);
-            res.send(result);
-        });
+        // blogs comment creat & codded by sojib [done]
+        // app.post("/comments", async (req, res) => {
+        //     const newComment = req.body;
+        //     const result = await blogsCommentCollection.insertOne(newComment);
+        //     res.send(result);
+        // });
 
-        app.get("/comments", async (req, res) => {
-            const result = await blogsCommentCollection.find().toArray();
-            res.send(result)
-        })
+        // [done]
+        // app.get("/comments", async (req, res) => {
+        //     const result = await blogsCommentCollection.find().toArray();
+        //     res.send(result)
+        // })
 
         //delete comment added by "Fahima"
         app.delete("/comments/:id", async (req, res) => {
