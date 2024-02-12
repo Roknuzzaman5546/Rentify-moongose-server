@@ -62,11 +62,11 @@ async function run() {
             res.send(result);
         });
 
-        // Request property data individually get by Sojib
-        app.get("/requested-properties", async (req, res) => {
-            const result = await Requested_PropertiesCollection.find().toArray();
-            res.send(result);
-        });
+        // Request property data individually get by Sojib [done]
+        // app.get("/requested-properties", async (req, res) => {
+        //     const result = await Requested_PropertiesCollection.find().toArray();
+        //     res.send(result);
+        // });
 
         // This API will call all the requested user properties by email address, including rental and sale properties. [by- Tanbir] [done]
         // app.get("/all_requested", async (req, res) => {
@@ -159,6 +159,7 @@ async function run() {
             );
             res.send(result);
         });
+        
         app.put("/reject/:id", async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };
@@ -217,11 +218,6 @@ async function run() {
         //     res.send(result);
         // });
 
-        // Request property data individually get by Sojib
-        app.get("/requested-properties", async (req, res) => {
-            const result = await Requested_PropertiesCollection.find().toArray();
-            res.send(result);
-        });
 
         //  [done]
         // app.post("/saved-properties", async (req, res) => {
@@ -249,22 +245,22 @@ async function run() {
         //coded by Fahima
         //for users
         //for users API created by Fahima
-        //avoids multiple entry of same email
-        app.post("/users", async (req, res) => {
-            const user = req.body;
-            const query = { email: user.email };
-            const userExist = await userCollection.findOne(query);
-            if (userExist) {
-                return res.send({ insertedId: null });
-            }
-            const result = await userCollection.insertOne(user);
-            res.send(result);
-        });
-
-        app.get("/users", async (req, res) => {
-            const result = await userCollection.find().toArray();
-            res.send(result);
-        });
+        //avoids multiple entry of same email [done]
+        // app.post("/users", async (req, res) => {
+        //     const user = req.body;
+        //     const query = { email: user.email };
+        //     const userExist = await userCollection.findOne(query);
+        //     if (userExist) {
+        //         return res.send({ insertedId: null });
+        //     }
+        //     const result = await userCollection.insertOne(user);
+        //     res.send(result);
+        // });
+                            // [done]
+        // app.get("/users", async (req, res) => {
+        //     const result = await userCollection.find().toArray();
+        //     res.send(result);
+        // });
 
         //change user role to owner
         app.patch("/users/:id", async (req, res) => {
@@ -279,12 +275,13 @@ async function run() {
             res.send(result);
         });
 
-        //get single user
-        app.get("/users/:email", async (req, res) => {
-            const email = req.params.email;
-            const user = await userCollection.findOne({ email });
-            res.send(user);
-        });
+        //get single user [done]
+        // app.get("/users/:email", async (req, res) => {
+        //     const email = req.params.email;
+        //     const user = await userCollection.findOne({ email });
+        //     res.send(user);
+        // });
+
 
         //reviews
 
