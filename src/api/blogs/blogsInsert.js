@@ -9,7 +9,7 @@ const blogsInsert = async (req, res) => {
         description: req.body.description,
         commodoviverra: req.body.commodoviverra,
         majorFacility: req.body.majorFacility,
-        blogerInfo: req.body.blogerInfo
+        bloggerInfo: req.body.bloggerInfo
     });
     const result = await blogs.save()
     res.send(result)

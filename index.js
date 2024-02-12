@@ -176,38 +176,39 @@ async function run() {
         //     res.send(result);
         // });
 
-        //this Api call the rentOutProperties and SoldProperties of an owner by konika
-        app.get("/rentOut", async (req, res) => {
-            const email = req.query.email;
-            const query = { owner: email };
-            console.log(query);
-            const rentOutProperties = await paymentCollection.find(query).toArray();
-            // console.log(rentOutProperties);
-            if (rentOutProperties) {
-                const result = rentOutProperties.filter(
-                    (item) => item?.property_status == "Rented"
-                );
-                res.send(result);
-            } else {
-                return res.status(401).send({ message: "unauthorized access" });
-            }
-        });
+        //this Api call the rentOutProperties and SoldProperties of an owner by konika [done]
+        // app.get("/rentOut", async (req, res) => {
+        //     const email = req.query.email;
+        //     const query = { owner: email };
+        //     console.log(query);
+        //     const rentOutProperties = await paymentCollection.find(query).toArray();
+        //     // console.log(rentOutProperties);
+        //     if (rentOutProperties) {
+        //         const result = rentOutProperties.filter(
+        //             (item) => item?.property_status == "Rented"
+        //         );
+        //         res.send(result);
+        //     } else {
+        //         return res.status(401).send({ message: "unauthorized access" });
+        //     }
+        // });
 
-        app.get("/soldOut", async (req, res) => {
-            const email = req.query.email;
-            const query = { owner: email };
-            console.log(query);
-            const rentOutProperties = await paymentCollection.find(query).toArray();
-            // console.log(rentOutProperties);
-            if (rentOutProperties) {
-                const result = rentOutProperties.filter(
-                    (item) => item?.property_status == "Sold"
-                );
-                res.send(result);
-            } else {
-                return res.status(401).send({ message: "unauthorized access" });
-            }
-        });
+        // [done]
+        // app.get("/soldOut", async (req, res) => {
+        //     const email = req.query.email;
+        //     const query = { owner: email };
+        //     console.log(query);
+        //     const rentOutProperties = await paymentCollection.find(query).toArray();
+        //     // console.log(rentOutProperties);
+        //     if (rentOutProperties) {
+        //         const result = rentOutProperties.filter(
+        //             (item) => item?.property_status == "Sold"
+        //         );
+        //         res.send(result);
+        //     } else {
+        //         return res.status(401).send({ message: "unauthorized access" });
+        //     }
+        // });
 
         // property data request post by Sojib [done]
         
@@ -366,11 +367,11 @@ async function run() {
         //     res.send(result);
         // });
 
-        // blogs get api creat & codded by sojib
-        app.get("/blogs", async (req, res) => {
-            const result = await blogCollection.find().toArray();
-            res.send(result);
-        });
+        // blogs get api creat & codded by sojib [done]
+        // app.get("/blogs", async (req, res) => {
+        //     const result = await blogCollection.find().toArray();
+        //     res.send(result);
+        // });
 
         // blogs comment creat & codded by sojib
         app.post("/comments", async (req, res) => {

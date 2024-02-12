@@ -24,20 +24,20 @@ const BlogsSchema = new Schema({
     },
     commodoviverra: [],
     majorFacility: [],
-    blogerInfo: {
-        blogerName: {
+    bloggerInfo: {
+        bloggerName: {
             type: String,
             required: true
         },
-        blogerEmail: {
+        bloggerEmail: {
             type: String,
             required: true
         },
-        blogerImg: {
+        bloggerImg: {
             type: String,
             required: true
         },
-        blogerDetails: {
+        bloggerDetails: {
             type: String,
             required: true
         }
