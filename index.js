@@ -54,13 +54,13 @@ async function run() {
         //     res.send(result);
         // });
 
-        // single property data
-        app.get("/properties/:id", async (req, res) => {
-            const id = req.params.id;
-            const query = { _id: new ObjectId(id) };
-            const result = await PropertyCollection.find(query).toArray();
-            res.send(result);
-        });
+        // single property data [done]
+        // app.get("/properties/:id", async (req, res) => {
+        //     const id = req.params.id;
+        //     const query = { _id: new ObjectId(id) };
+        //     const result = await PropertyCollection.find(query).toArray();
+        //     res.send(result);
+        // });
 
         // Request property data individually get by Sojib [done]
         // app.get("/requested-properties", async (req, res) => {
@@ -145,35 +145,36 @@ async function run() {
         //     }
         // });
 
-        app.put("/accept/:id", async (req, res) => {
-            const id = req.params.id;
-            const query = { _id: new ObjectId(id) };
-            const updateStatus = {
-                $set: {
-                    requestStatus: "accepted",
-                },
-            };
-            const result = await Requested_PropertiesCollection.updateOne(
-                query,
-                updateStatus
-            );
-            res.send(result);
-        });
-        
-        app.put("/reject/:id", async (req, res) => {
-            const id = req.params.id;
-            const query = { _id: new ObjectId(id) };
-            const updateStatus = {
-                $set: {
-                    requestStatus: "rejected",
-                },
-            };
-            const result = await Requested_PropertiesCollection.updateOne(
-                query,
-                updateStatus
-            );
-            res.send(result);
-        });
+        // [done]
+        // app.put("/accept/:id", async (req, res) => {
+        //     const id = req.params.id;
+        //     const query = { _id: new ObjectId(id) };
+        //     const updateStatus = {
+        //         $set: {
+        //             requestStatus: "accepted",
+        //         },
+        //     };
+        //     const result = await Requested_PropertiesCollection.updateOne(
+        //         query,
+        //         updateStatus
+        //     );
+        //     res.send(result);
+        // });
+        // [done]
+        // app.put("/reject/:id", async (req, res) => {
+        //     const id = req.params.id;
+        //     const query = { _id: new ObjectId(id) };
+        //     const updateStatus = {
+        //         $set: {
+        //             requestStatus: "rejected",
+        //         },
+        //     };
+        //     const result = await Requested_PropertiesCollection.updateOne(
+        //         query,
+        //         updateStatus
+        //     );
+        //     res.send(result);
+        // });
 
         //this Api call the rentOutProperties and SoldProperties of an owner by konika
         app.get("/rentOut", async (req, res) => {
