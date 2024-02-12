@@ -359,12 +359,12 @@ async function run() {
         //     res.send({ paymentResult, deleteRes, patchRes });
         // });
 
-        // blogs post api creat & codded by sojib
-        app.post("/blogs", async (req, res) => {
-            const newBlog = req.body;
-            const result = await blogCollection.insertOne(newBlog);
-            res.send(result);
-        });
+        // blogs post api creat & codded by sojib [done]
+        // app.post("/blogs", async (req, res) => {
+        //     const newBlog = req.body;
+        //     const result = await blogCollection.insertOne(newBlog);
+        //     res.send(result);
+        // });
 
         // blogs get api creat & codded by sojib
         app.get("/blogs", async (req, res) => {
