@@ -326,38 +326,38 @@ async function run() {
         });
 
         //code by "Fahima"
-        // payment intent api by Rana
-        app.post("/create-payment-intent", async (req, res) => {
-            const { price } = req.body;
-            const amount = parseInt(price * 100);
+        // payment intent api by Rana [done]
+        // app.post("/create-payment-intent", async (req, res) => {
+        //     const { price } = req.body;
+        //     const amount = parseInt(price * 100);
 
-            const paymentIntent = await stripe.paymentIntents.create({
-                amount: amount,
-                currency: "usd",
-                payment_method_types: ["card"],
-            });
-            res.send({
-                clientSecret: paymentIntent.client_secret,
-            });
-        });
+        //     const paymentIntent = await stripe.paymentIntents.create({
+        //         amount: amount,
+        //         currency: "usd",
+        //         payment_method_types: ["card"],
+        //     });
+        //     res.send({
+        //         clientSecret: paymentIntent.client_secret,
+        //     });
+        // });
+        // [done]
+        // app.post("/payments", async (req, res) => {
+        //     const payment = req.body;
+        //     const paymentResult = await paymentCollection.insertOne(payment);
+        //     const query = { _id: new ObjectId(payment.requestId) };
+        //     const deleteRes = await Requested_PropertiesCollection.deleteOne(query);
 
-        app.post("/payments", async (req, res) => {
-            const payment = req.body;
-            const paymentResult = await paymentCollection.insertOne(payment);
-            const query = { _id: new ObjectId(payment.requestId) };
-            const deleteRes = await Requested_PropertiesCollection.deleteOne(query);
-
-            // This functions bellow are working for patch the status of property from the property collection by filtering the spesific property collection using propertyID from the payment object. [Added by -Tanbir]
-            const filter = { _id: new ObjectId(payment.propertyId) };
-            const updateDoc = {
-                $set: {
-                    "property_info.property_details.property_status":
-                        payment.property_status,
-                },
-            };
-            const patchRes = await PropertyCollection.updateOne(filter, updateDoc);
-            res.send({ paymentResult, deleteRes, patchRes });
-        });
+        //     // This functions bellow are working for patch the status of property from the property collection by filtering the spesific property collection using propertyID from the payment object. [Added by -Tanbir]
+        //     const filter = { _id: new ObjectId(payment.propertyId) };
+        //     const updateDoc = {
+        //         $set: {
+        //             "property_info.property_details.property_status":
+        //                 payment.property_status,
+        //         },
+        //     };
+        //     const patchRes = await PropertyCollection.updateOne(filter, updateDoc);
+        //     res.send({ paymentResult, deleteRes, patchRes });
+        // });
 
         // blogs post api creat & codded by sojib
         app.post("/blogs", async (req, res) => {
