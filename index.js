@@ -263,19 +263,19 @@ async function run() {
         //     const result = await userCollection.find().toArray();
         //     res.send(result);
         // });
-
-        //change user role to owner
-        app.patch("/users/:id", async (req, res) => {
-            const id = req.params.id;
-            const filter = { _id: new ObjectId(id) };
-            const roleChange = {
-                $set: {
-                    role: "Owner",
-                },
-            };
-            const result = await userCollection.updateOne(filter, roleChange);
-            res.send(result);
-        });
+        
+        //  change user role to owner [done]
+        // app.patch("/users/:id", async (req, res) => {
+        //     const id = req.params.id;
+        //     const filter = { _id: new ObjectId(id) };
+        //     const roleChange = {
+        //         $set: {
+        //             role: "Owner",
+        //         },
+        //     };
+        //     const result = await userCollection.updateOne(filter, roleChange);
+        //     res.send(result);
+        // });
 
         //get single user [done]
         // app.get("/users/:email", async (req, res) => {
@@ -300,31 +300,34 @@ async function run() {
         //     res.send(result);
         // });
 
-        //review delete
-        app.delete("/reviews/:id", async (req, res) => {
-            const id = req.params.id;
-            const filter = { _id: new ObjectId(id) };
-            const result = await reviewCollection.deleteOne(filter);
-            res.send(result);
-        });
+        //review delete [done]
+        // app.delete("/reviews/:id", async (req, res) => {
+        //     const id = req.params.id;
+        //     const filter = { _id: new ObjectId(id) };
+        //     const result = await reviewCollection.deleteOne(filter);
+        //     res.send(result);
+        // });
 
-        //ownerRequest
+        //ownerRequest   
         //for avoiding multiple request with same email
-        app.post("/ownerRequest", async (req, res) => {
-            const owner = req.body;
-            const query = { ownerEmail: owner.ownerEmail };
-            const ownerRequestExist = await ownerCollection.findOne(query);
-            if (ownerRequestExist) {
-                return res.send({ insertedId: null });
-            }
-            const result = await ownerCollection.insertOne(owner);
-            res.send(result);
-        });
 
-        app.get("/ownerRequest", async (req, res) => {
-            const result = await ownerCollection.find().toArray();
-            res.send(result);
-        });
+        // [done]
+        // app.post("/ownerRequest", async (req, res) => {
+        //     const owner = req.body;
+        //     const query = { ownerEmail: owner.ownerEmail };
+        //     const ownerRequestExist = await ownerCollection.findOne(query);
+        //     if (ownerRequestExist) {
+        //         return res.send({ insertedId: null });
+        //     }
+        //     const result = await ownerCollection.insertOne(owner);
+        //     res.send(result);
+        // });
+
+        // [done]
+        // app.get("/ownerRequest", async (req, res) => {
+        //     const result = await ownerCollection.find().toArray();
+        //     res.send(result);
+        // });
 
         //code by "Fahima"
         // payment intent api by Rana [done]
@@ -386,13 +389,13 @@ async function run() {
         //     res.send(result)
         // })
 
-        //delete comment added by "Fahima"
-        app.delete("/comments/:id", async (req, res) => {
-            const id = req.params.id;
-            const filter = { _id: new ObjectId(id) };
-            const result = await blogsCommentCollection.deleteOne(filter);
-            res.send(result);
-        });
+        //delete comment added by "Fahima" [done]
+        // app.delete("/comments/:id", async (req, res) => {
+        //     const id = req.params.id;
+        //     const filter = { _id: new ObjectId(id) };
+        //     const result = await blogsCommentCollection.deleteOne(filter);
+        //     res.send(result);
+        // });
 
         //code by Fahima
         // Connect the client to the server	(optional starting in v4.7)
