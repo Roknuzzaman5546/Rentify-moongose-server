@@ -22,76 +22,76 @@ const PropertiesSchema = new Schema({
         },
         property_for: {
             type: String,
-            require: true
+            required: true
         },
-        property_status: {
+        verify_status: {
             type: String,
-            require: true
+            required: true
         },
         property_img: {
             type: String,
-            require: true
+            required: true
         },
         property_title: {
             type: String,
-            require: true
+            required: true
         },
         property_category: {
             type: String,
-            require: true
+            required: true
         },
         property_description: {
             type: String,
-            require: true
+            required: true
         },
         property_details: {
             property_id: {
                 type: Number,
-                require: true
+                required: true
             },
             property_price: {
                 type: Number,
-                require: true
+                required: true
             },
             property_type: {
                 type: String,
-                require: true
+                required: true
             },
             property_status: {
                 type: String,
-                require: true
+                required: true
             },
             bedroom: {
                 type: Number,
-                require: true
+                required: true
             },
             bath: {
                 type: Number,
-                require: true
+                required: true
             },
             balcony: {
                 type: Number,
-                require: true
+                required: true
             },
             garages: {
                 type: Number,
-                require: true
+                required: true
             },
             sqf: {
                 type: Number,
-                require: true
+                required: true
             },
             built: {
                 type: Number,
-                require: true
+                required: true
             },
             floor_plans: {
                 type: String,
-                require: true
+                required: true
             },
             property_video: {
                 type: String,
-                require: true
+                required: true
             },
             property_features: [],
             property_tags: [],
@@ -100,19 +100,19 @@ const PropertiesSchema = new Schema({
             address: {
                 street: {
                     type: String,
-                    require: true
+                    required: true
                 },
                 city: {
                     type: String,
-                    require: true
+                    required: true
                 },
                 state: {
                     type: String,
-                    require: true
+                    required: true
                 },
                 country: {
                     type: String,
-                    require: true
+                    required: true
                 }
             }
         }
