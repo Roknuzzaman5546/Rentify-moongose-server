@@ -1,4 +1,4 @@
-// this is api rout for users authectication
+// this is api rout for users authentication
 const usersFind = require('../../api/users/usersFind');
 const usersFindALl = require('../../api/users/usersFindAll');
 const userInsert = require('../../api/users/usersInsert');

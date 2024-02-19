@@ -3,35 +3,52 @@ const { model, Schema } = require("mongoose");
 const PaymentsSchema = new Schema({
     paymentUser: {
         type: String,
-        required: true
+        default: ""
     },
     propertyId: {
         type: String,
-        required: true
+        default: ""
     },
     requestId: {
         type: String,
-        required: true
+        default: ""
     },
     price: {
         type: Number,
-        required: true
+        default: null
     },
     owner: {
         type: String,
-        required: true
+        default: ""
+    },
+    property_img: {
+        type: String,
+        default: ""
+    },
+    property_title: {
+        type: String,
+        default: ""
+    },
+    property_location: {
+        type: Object,
+        // This object is not required for development purposes by Tanbir
+        // default: ""
+    },
+    property_category: {
+        type: String,
+        default: ""
     },
     property_status: {
         type: String,
-        required: true
+        default: ""
     },
     date: {
         type: String,
-        required: true
+        default: ""
     },
     transactionId: {
         type: String,
-        required: true
+        default: ""
     },
 })
 

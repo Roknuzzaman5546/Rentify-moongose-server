@@ -3,39 +3,39 @@ const { model, Schema } = require("mongoose");
 const ReviewsSchema = new Schema({
     propertyId: {
         type: String,
-        required: true
+        default: ""
     },
     propertyTitle: {
         type: String,
-        required: true
+        default: ""
     },
     reviewerEmail: {
         type: String,
-        required: true
+        default: ""
     },
     reviewerName: {
         type: String,
-        required: true
+        default: ""
     },
     reviewerImage: {
         type: String,
-        required: true
+        default: ""
     },
     reviewText: {
         type: String,
-        required: true
+        default: ""
     },
     reviewImage: {
         type: String,
-        required: true
+        default: ""
     },
     reviewRating: {
-        type: String,
-        required: true
+        type: Number,
+        default: null
     },
     date: {
         type: String,
-        required: true
+        default: ""
     },
 })
 

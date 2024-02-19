@@ -2,12 +2,12 @@ const { ObjectId } = require("mongodb");
 const Requested_Properties = require("../../models/requestedProperties");
 
 
-const requestedRejected = async (req, res) => {
+const requestAccept = async (req, res) => {
     const id = req.params.id;
     const query = { _id: new ObjectId(id) };
     const updateStatus = {
         $set: {
-            requestStatus: "rejected",
+            requestStatus: "accepted",
         },
     };
     const result = await Requested_Properties.updateOne(
@@ -17,4 +17,4 @@ const requestedRejected = async (req, res) => {
     res.send(result);
 }
 
-module.exports = requestedRejected;
+module.exports = requestAccept

@@ -1,4 +1,4 @@
-// this is api rout for comments authectication
+// this is api rout for comments authentication
 const commentDelete = require('../../api/comments/commentDelete');
 const commentFindAll = require('../../api/comments/commentFindAll');
 const commentInsert = require('../../api/comments/commentInsert');

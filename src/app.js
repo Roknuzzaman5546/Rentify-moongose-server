@@ -1,5 +1,5 @@
 const express = require("express");
-const applyMiddlware = require("./middilwares/applyMiddelware");
+const applyMiddleware = require("./middlewares/applyMiddleware");
 const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
@@ -10,20 +10,20 @@ const savedPropertiesRoutes = require("./routes/savedProperties")
 const requestedProperties = require("./routes/requestedProperties")
 const usersRoutes = require("./routes/users")
 const paymentRoutes = require("./routes/payments")
-const blogsRountes = require("./routes/blogs")
+const blogsRoutes = require("./routes/blogs")
 const commentsRoutes = require("./routes/comments")
 const reviewsRoutes = require("./routes/reviews")
-const ownerRequestRoutes = require("./routes/ownerRequest")
+const ownerRequestRoutes = require("./routes/ownerRequest");
 
-// It's export into middlware folder for use middlware 
-applyMiddlware(app)
+// It's export into middleware folder for use middleware 
+applyMiddleware(app)
 
 app.use(propertiesRoutes)
 app.use(savedPropertiesRoutes)
 app.use(requestedProperties)
 app.use(usersRoutes)
 app.use(paymentRoutes)
-app.use(blogsRountes)
+app.use(blogsRoutes)
 app.use(commentsRoutes)
 app.use(reviewsRoutes)
 app.use(ownerRequestRoutes)

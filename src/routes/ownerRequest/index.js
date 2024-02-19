@@ -1,5 +1,5 @@
-// this is api rout for payments authectication
-const ownerRequestInsert = require('../../api/ownerRequest/ownerRequesInsert');
+// this is api rout for payments authentication
+const ownerRequestInsert = require('../../api/ownerRequest/ownerRequestInsert');
 const ownerRequestedFindAll = require('../../api/ownerRequest/ownerRequestedFindAll');
 const router = require('express').Router();
 

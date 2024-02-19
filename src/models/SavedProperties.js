@@ -4,99 +4,99 @@ const SavedPropertiesSchema = new Schema({
     property: {
         _id: {
             type: String,
-            required: true
+            default: ""
         },
         property_info: {
             owner_details: {
                 owner_name: {
                     type: String,
-                    required: true
+                    default: ""
                 },
                 owner_img: {
                     type: String,
-                    required: true
+                    default: ""
                 },
                 owner_email: {
                     type: String,
-                    required: true
+                    default: ""
                 }
             },
             ownership_duration: {
                 type: String,
-                required: true
+                default: ""
             },
             property_for: {
                 type: String,
-                require: true
+                default: ""
             },
-            property_status: {
+            verify_status: {
                 type: String,
-                require: true
+                default: ""
             },
             property_img: {
                 type: String,
-                require: true
+                default: ""
             },
             property_title: {
                 type: String,
-                require: true
+                default: ""
             },
             property_category: {
                 type: String,
-                require: true
+                default: ""
             },
             property_description: {
                 type: String,
-                require: true
+                default: ""
             },
             property_details: {
                 property_id: {
-                    type: Number,
-                    require: true
+                    type: String,
+                    default: ""
                 },
                 property_price: {
                     type: Number,
-                    require: true
+                    default: null
                 },
                 property_type: {
                     type: String,
-                    require: true
+                    default: ""
                 },
                 property_status: {
                     type: String,
-                    require: true
+                    default: ""
                 },
                 bedroom: {
                     type: Number,
-                    require: true
+                    default: null
                 },
                 bath: {
                     type: Number,
-                    require: true
+                    default: null
                 },
                 balcony: {
                     type: Number,
-                    require: true
+                    default: null
                 },
                 garages: {
                     type: Number,
-                    require: true
+                    default: null
                 },
                 sqf: {
                     type: Number,
-                    require: true
+                    default: null
                 },
                 built: {
-                    type: Number,
-                    require: true
+                    type: String,
+                    default: ""
                 },
                 floor_plans: {
                     type: String,
-                    require: true
+                    default: ""
                 },
                 property_video: {
                     type: String,
-                    require: true
+                    default: ""
                 },
                 property_features: [],
                 property_tags: [],
@@ -105,19 +105,19 @@ const SavedPropertiesSchema = new Schema({
                 address: {
                     street: {
                         type: String,
-                        require: true
+                        default: ""
                     },
                     city: {
                         type: String,
-                        require: true
+                        default: ""
                     },
                     state: {
                         type: String,
-                        require: true
+                        default: ""
                     },
                     country: {
                         type: String,
-                        require: true
+                        default: ""
                     }
                 }
             }
@@ -125,9 +125,9 @@ const SavedPropertiesSchema = new Schema({
     },
     savedUserEmail: {
         type: String,
-        required: true
+        default: ""
     }
 })
 
-const SavedProperties = model("SavedProperties", SavedPropertiesSchema);
+const SavedProperties = model("Saved_Properties", SavedPropertiesSchema, "Saved_Properties");
 module.exports = SavedProperties

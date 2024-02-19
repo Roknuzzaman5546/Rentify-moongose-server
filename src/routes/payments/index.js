@@ -1,4 +1,4 @@
-// this is api rout for payments authectication
+// this is api rout for payments authentication
 const paymentIntent = require('../../api/payments/paymentIntent');
 const paymentInsert = require('../../api/payments/paymentsInsert');
 const rentOutProperties = require('../../api/payments/rentOutProperties');

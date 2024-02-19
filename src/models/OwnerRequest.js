@@ -1,28 +1,60 @@
 const { model, Schema } = require("mongoose");
 
 const OwnerSchema = new Schema({
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    number: {
+        type: String,
+        required: true
+    },
     ownerEmail: {
         type: String,
         required: true
     },
-    ownerName: {
+    ownerImg: {
         type: String,
         required: true
     },
-    ownerImage: {
+    profession: {
         type: String,
         required: true
     },
-    ownerProfession: {
+    facebook: {
         type: String,
         required: true
     },
-    status: {
+    twitter: {
         type: String,
+        required: true
+    },
+    linkedin: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    zipCode: {
+        type: String,
+        required: true
+    },
+    ownerStatus: {
+        type: Boolean,
         required: true
     }
 })
 
 
-const Owner = model("OwnerRequest", OwnerSchema);
+const Owner = model("ownerRequest", OwnerSchema, "ownerRequest");
 module.exports = Owner

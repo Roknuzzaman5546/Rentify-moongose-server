@@ -5,93 +5,93 @@ const PropertiesSchema = new Schema({
         owner_details: {
             owner_name: {
                 type: String,
-                required: true
+                default: ""
             },
             owner_img: {
                 type: String,
-                required: true
+                default: ""
             },
             owner_email: {
                 type: String,
-                required: true
+                default: ""
             }
         },
         ownership_duration: {
             type: String,
-            required: true
+            default: ""
         },
         property_for: {
             type: String,
-            required: true
+            default: ""
         },
         verify_status: {
             type: String,
-            required: true
+            default: ""
         },
         property_img: {
             type: String,
-            required: true
+            default: ""
         },
         property_title: {
             type: String,
-            required: true
+            default: ""
         },
         property_category: {
             type: String,
-            required: true
+            default: ""
         },
         property_description: {
             type: String,
-            required: true
+            default: ""
         },
         property_details: {
             property_id: {
-                type: Number,
-                required: true
+                type: String,
+                default: ""
             },
             property_price: {
                 type: Number,
-                required: true
+                default: null
             },
             property_type: {
                 type: String,
-                required: true
+                default: ""
             },
             property_status: {
                 type: String,
-                required: true
+                default: ""
             },
             bedroom: {
                 type: Number,
-                required: true
+                default: null
             },
             bath: {
                 type: Number,
-                required: true
+                default: null
             },
             balcony: {
                 type: Number,
-                required: true
+                default: null
             },
             garages: {
                 type: Number,
-                required: true
+                default: null
             },
             sqf: {
                 type: Number,
-                required: true
+                default: null
             },
             built: {
-                type: Number,
-                required: true
+                type: String,
+                default: ""
             },
             floor_plans: {
                 type: String,
-                required: true
+                default: ""
             },
             property_video: {
                 type: String,
-                required: true
+                default: ""
             },
             property_features: [],
             property_tags: [],
@@ -100,24 +100,24 @@ const PropertiesSchema = new Schema({
             address: {
                 street: {
                     type: String,
-                    required: true
+                    default: ""
                 },
                 city: {
                     type: String,
-                    required: true
+                    default: ""
                 },
                 state: {
                     type: String,
-                    required: true
+                    default: ""
                 },
                 country: {
                     type: String,
-                    required: true
+                    default: ""
                 }
             }
         }
     }
 })
 
-const Properties = model("Properties", PropertiesSchema);
+const Properties = model("Property", PropertiesSchema, "Property");
 module.exports = Properties

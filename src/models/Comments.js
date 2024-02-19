@@ -31,5 +31,5 @@ const CommentsSchema = new Schema({
     },
 })
 
-const Comments = model("blogComment", CommentsSchema);
+const Comments = model("blogsComment", CommentsSchema, "blogsComment");
 module.exports = Comments
