@@ -1,4 +1,4 @@
-// this is comments data insert functioon
+// this is comments data insert function
 const Comments = require("../../models/Comments");
 
 const commentInsert = async (req, res) => {
